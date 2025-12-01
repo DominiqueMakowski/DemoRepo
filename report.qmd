@@ -1,0 +1,26 @@
+---
+title: "PhD Study"
+subtitle: "Descriptive Statistics"
+author: "Justin Case"
+format: 
+  html:
+    self-contained: true
+    theme: quartz
+editor: source
+---
+
+## Introduction
+
+Below is a funny image:
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm01dmZsemduZGthbTQ2em5zOGg5b20xcTN4cmM4MG5jcXh6MnZ1ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7hvkctkRc3Q6Q/giphy.gif)
+
+## Results
+
+```{r}
+hist(iris$Sepal.Length)
+```
+
+## Discussion
+
+It is a nice histogram.
