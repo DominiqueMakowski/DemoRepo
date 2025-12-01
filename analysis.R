@@ -1,6 +1,6 @@
 library(tidyverse)
 
-df <- read.csv("https://raw.githubusercontent.com/DominiqueMakowski/DemoRepo/refs/heads/main/mydata.csv")
+df <- read.csv("TO_BE_REPLACED")
 
 ggplot(df, aes(x = PHQ4_Depression, y = LifeSatisfaction)) +
   geom_density2d_filled() +
