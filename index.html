@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #ffffff;
+            --secondary: #a0a0a0;
+            --accent: #64ffda;
+            --danger: #ff6b6b;
+            --bg-gradient: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #2c003e);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Animated Background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Card */
+        .cv-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .dob {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 300;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Grid Layout for Content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sections */
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .section-item {
+            margin-bottom: 20px;
+        }
+
+        .section-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .section-item span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Tags for Skills & Likes */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            cursor: default;
+        }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .tag.like { border-left: 3px solid var(--accent); }
+        .tag.dislike { border-left: 3px solid var(--danger); }
+
+        /* Icon styling helper */
+        i { width: 20px; text-align: center; margin-right: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <header>
+            <img src="https://raw.githubusercontent.com/DominiqueMakowski/DemoRepo/refs/heads/main/mypic.jpg" alt="John Doe" class="profile-pic">
+            <h1>John Doe</h1>
+            <p class="dob"><i class="fas fa-birthday-cake"></i> Born: 25/12/2000</p>
+        </header>
+
+        <div class="content-grid">
+            <div class="column">
+                
+                <section>
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="section-item">
+                        <h3>Sussex University</h3>
+                        <span>2023 - Present</span>
+                    </div>
+                    <div class="section-item">
+                        <h3>Hogwarts High School</h3>
+                        <span>2019 - 2023</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-code"></i> Skills</h2>
+                    <div class="tags-container">
+                        <div class="tag">Psychology Background</div>
+                        <div class="tag">Statistics in R</div>
+                        <div class="tag">Python (Basic)</div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="column">
+                
+                <section>
+                    <h2><i class="fas fa-thumbs-up"></i> Things I Like</h2>
+                    <div class="tags-container">
+                        <div class="tag like">Football</div>
+                        <div class="tag like">Sci-Fi Movies</div>
+                        <div class="tag like">Craft Beers</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 style="color: var(--danger);"><i class="fas fa-thumbs-down"></i> Things I Don't Like</h2>
+                    <div class="tags-container">
+                        <div class="tag dislike">Running</div>
+                        <div class="tag dislike">Rude People</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
