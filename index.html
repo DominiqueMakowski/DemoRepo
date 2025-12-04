@@ -3,227 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - CV</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dominique Makowski | Cat-egorically Amazing CV</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        :root {
-            --primary: #ffffff;
-            --secondary: #a0a0a0;
-            --accent: #64ffda;
-            --danger: #ff6b6b;
-            --bg-gradient: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #2c003e);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-gradient);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--primary);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Animated Background */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Glassmorphism Card */
-        .cv-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 5px;
-        }
-
-        .dob {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            font-weight: 300;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Grid Layout for Content */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        'cat-cream': '#FDF6E3',
+                        'cat-brown': '#5D4037',
+                        'cat-orange': '#FFAB91',
+                        'cat-dark': '#3E2723',
+                        'cat-accent': '#FF8A65'
+                    },
+                    animation: {
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'scratch': 'scratch 0.5s ease-in-out forwards',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        scratch: {
+                            '0%': { transform: 'translateX(0)' },
+                            '20%': { transform: 'translateX(-10px) rotate(-5deg)' },
+                            '40%': { transform: 'translateX(10px) rotate(5deg)' },
+                            '60%': { transform: 'translateX(-10px) rotate(-5deg)' },
+                            '80%': { transform: 'translateX(10px) rotate(5deg)' },
+                            '100%': { transform: 'translateX(0) opacity(0.5)' },
+                        }
+                    }
+                }
             }
         }
+    </script>
 
-        /* Sections */
-        h2 {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
+    <style>
+        body {
+            background-color: #FDF6E3;
+            background-image: radial-gradient(#FFAB91 1px, transparent 1px);
+            background-size: 40px 40px;
+            cursor: none; /* Hide default cursor for custom yarn ball */
         }
 
-        .section-item {
-            margin-bottom: 20px;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDF6E3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #FFAB91;
+            border-radius: 20px;
+            border: 3px solid #FDF6E3;
         }
 
-        .section-item h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .section-item span {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            display: block;
-            margin-top: 4px;
-        }
-
-        /* Tags for Skills & Likes */
-        .tags-container {
+        /* Yarn Cursor */
+        .cursor-follower {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background-color: #FF7043;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 10px rgba(255, 112, 67, 0.5);
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cursor-follower::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            transform: rotate(45deg);
         }
 
-        .tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            transition: background 0.3s ease;
-            cursor: default;
+        /* Cat Ears Shape for Profile */
+        .cat-frame {
+            position: relative;
+            z-index: 10;
+        }
+        .cat-frame::before, .cat-frame::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: white; /* Matches border */
+            border-radius: 4px;
+            z-index: -1;
+        }
+        .cat-frame::before {
+            left: 10px;
+            transform: rotate(-15deg);
+        }
+        .cat-frame::after {
+            right: 10px;
+            transform: rotate(15deg);
         }
 
-        .tag:hover {
-            background: rgba(255, 255, 255, 0.2);
+        /* Hover Cards */
+        .info-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .info-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        .tag.like { border-left: 3px solid var(--accent); }
-        .tag.dislike { border-left: 3px solid var(--danger); }
-
-        /* Icon styling helper */
-        i { width: 20px; text-align: center; margin-right: 5px; }
-
+        .hate-item:hover {
+            animation: scratch 0.5s ease-in-out;
+            text-decoration: line-through;
+            color: #ef4444;
+        }
     </style>
 </head>
-<body>
+<body class="text-cat-brown selection:bg-cat-orange selection:text-white overflow-x-hidden">
 
-    <div class="cv-container">
-        <header>
-            <img src="https://raw.githubusercontent.com/DominiqueMakowski/DemoRepo/refs/heads/main/mypic.jpg" alt="John Doe" class="profile-pic">
-            <h1>John Doe</h1>
-            <p class="dob"><i class="fas fa-birthday-cake"></i> Born: 25/12/2000</p>
-        </header>
-
-        <div class="content-grid">
-            <div class="column">
-                
-                <section>
-                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                    <div class="section-item">
-                        <h3>Sussex University</h3>
-                        <span>2023 - Present</span>
-                    </div>
-                    <div class="section-item">
-                        <h3>Hogwarts High School</h3>
-                        <span>2019 - 2023</span>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-code"></i> Skills</h2>
-                    <div class="tags-container">
-                        <div class="tag">Psychology Background</div>
-                        <div class="tag">Statistics in R</div>
-                        <div class="tag">Python (Basic)</div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="column">
-                
-                <section>
-                    <h2><i class="fas fa-thumbs-up"></i> Things I Like</h2>
-                    <div class="tags-container">
-                        <div class="tag like">Football</div>
-                        <div class="tag like">Sci-Fi Movies</div>
-                        <div class="tag like">Craft Beers</div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 style="color: var(--danger);"><i class="fas fa-thumbs-down"></i> Things I Don't Like</h2>
-                    <div class="tags-container">
-                        <div class="tag dislike">Running</div>
-                        <div class="tag dislike">Rude People</div>
-                    </div>
-                </section>
-            </div>
-        </div>
+    <!-- Custom Cursor -->
+    <div id="cursor" class="cursor-follower hidden md:flex">
+        <div class="w-2 h-2 bg-white rounded-full opacity-50"></div>
     </div>
 
+    <!-- Navigation / Header -->
+    <nav class="w-full p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="font-display font-bold text-2xl flex items-center gap-2">
+            <i data-lucide="cat" class="w-8 h-8 text-cat-accent"></i>
+            <span>D. Makowski</span>
+        </div>
+        <a href="#contact" class="bg-cat-dark text-white px-6 py-2 rounded-full font-bold hover:bg-cat-accent transition-colors flex items-center gap-2 group">
+            <span>Feed Me</span>
+            <i data-lucide="fish" class="w-4 h-4 group-hover:animate-bounce"></i>
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-10 md:py-20 flex flex-col items-center">
+        
+        <!-- Profile Section -->
+        <div class="relative group mb-8">
+            <div class="cat-frame relative">
+                <img 
+                    src="https://raw.githubusercontent.com/DominiqueMakowski/DemoRepo/refs/heads/main/mypic.jpg" 
+                    alt="Dominique Makowski"
+                    onerror="this.src='https://placekitten.com/400/400'"
+                    class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-3xl border-8 border-white shadow-xl relative z-10"
+                >
+                <!-- Whiskers decor -->
+                <div class="absolute top-1/2 -left-12 w-20 h-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div class="w-full h-0.5 bg-cat-dark mb-2 transform -rotate-12 translate-x-4"></div>
+                    <div class="w-full h-0.5 bg-cat-dark mb-2 transform translate-x-2"></div>
+                    <div class="w-full h-0.5 bg-cat-dark transform rotate-12 translate-x-4"></div>
+                </div>
+                <div class="absolute top-1/2 -right-12 w-20 h-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div class="w-full h-0.5 bg-cat-dark mb-2 transform rotate-12 -translate-x-4"></div>
+                    <div class="w-full h-0.5 bg-cat-dark mb-2 transform -translate-x-2"></div>
+                    <div class="w-full h-0.5 bg-cat-dark transform -rotate-12 -translate-x-4"></div>
+                </div>
+            </div>
+            <!-- Paw print badge -->
+            <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg z-20 animate-bounce-slow">
+                <i data-lucide="paw-print" class="w-6 h-6 text-cat-accent"></i>
+            </div>
+        </div>
+
+        <!-- Name & Title -->
+        <h1 class="font-display text-4xl md:text-6xl font-bold text-cat-dark mb-2 text-center">Dominique Makowski</h1>
+        <p class="text-xl text-cat-brown/80 mb-12 font-medium flex items-center gap-2">
+            <span class="bg-cat-orange/20 px-3 py-1 rounded-full">Human</span>
+            <span>•</span>
+            <span>Professional Nap Enthusiast</span>
+        </p>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
+            <!-- Education Card -->
+            <div class="info-card bg-white p-8 rounded-3xl shadow-sm border border-cat-orange/10 md:col-span-2 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5">
+                    <i data-lucide="graduation-cap" class="w-32 h-32"></i>
+                </div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-blue-100 rounded-2xl text-blue-600">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-cat-dark">Education</h2>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="mt-1">
+                            <i data-lucide="paw-print" class="w-5 h-5 text-cat-orange rotate-45"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cat-dark">PhD in Engineering</h3>
+                            <p class="text-cat-brown/70">University of Advanced Zoomies</p>
+                            <p class="text-sm mt-2 text-gray-500">Specialized in structural integrity of cardboard boxes and laser pointer dynamics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Things I Love -->
+            <div class="info-card bg-white p-8 rounded-3xl shadow-sm border border-green-100 relative overflow-hidden">
+                <div class="absolute -bottom-4 -right-4 opacity-5 transform rotate-12">
+                    <i data-lucide="heart" class="w-40 h-40"></i>
+                </div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-green-100 rounded-2xl text-green-600">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-cat-dark">Things I Love</h2>
+                </div>
+                
+                <ul class="space-y-3 relative z-10">
+                    <li class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors group">
+                        <span class="text-2xl group-hover:animate-wiggle">☘️</span>
+                        <div>
+                            <span class="font-bold block">Irish Dance</span>
+                            <span class="text-xs text-green-600/70">Jigging like nobody's watching</span>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors group">
+                        <span class="text-2xl group-hover:animate-bounce">🧶</span>
+                        <div>
+                            <span class="font-bold block">Yarn Balls</span>
+                            <span class="text-xs text-green-600/70">Chaos untangled</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Things I Hate -->
+            <div class="info-card bg-white p-8 rounded-3xl shadow-sm border border-red-100 relative overflow-hidden">
+                <div class="absolute -bottom-4 -right-4 opacity-5 transform -rotate-12">
+                    <i data-lucide="frown" class="w-40 h-40"></i>
+                </div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-red-100 rounded-2xl text-red-600">
+                        <i data-lucide="bomb" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-cat-dark">Things I Hate</h2>
+                </div>
+                
+                <ul class="space-y-3 relative z-10">
+                    <li class="hate-item flex items-center gap-3 p-3 rounded-xl hover:bg-red-50 transition-colors cursor-pointer group">
+                        <div class="relative">
+                             <span class="text-2xl block group-hover:hidden">📊</span>
+                             <i data-lucide="cat" class="w-6 h-6 text-red-500 hidden group-hover:block"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold block group-hover:text-red-600">Statistics</span>
+                            <span class="text-xs text-red-400 group-hover:text-red-500">HISS! Too many numbers.</span>
+                        </div>
+                    </li>
+                     <li class="hate-item flex items-center gap-3 p-3 rounded-xl hover:bg-red-50 transition-colors cursor-pointer group">
+                        <div class="relative">
+                             <span class="text-2xl block group-hover:hidden">🚿</span>
+                             <i data-lucide="cloud-rain" class="w-6 h-6 text-red-500 hidden group-hover:block"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold block group-hover:text-red-600">Water</span>
+                            <span class="text-xs text-red-400 group-hover:text-red-500">Absolutely not.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact" class="mt-20 text-center w-full">
+            <div class="bg-cat-dark text-cat-cream rounded-3xl p-8 max-w-2xl mx-auto shadow-xl relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cat-orange via-yellow-400 to-cat-orange"></div>
+                
+                <h3 class="font-display text-2xl font-bold mb-4">Contact Me</h3>
+                <p class="mb-6 opacity-80">Send treats or inquiries. Preferably treats.</p>
+                
+                <div class="flex justify-center gap-4">
+                    <button onclick="meow()" class="bg-white text-cat-dark px-6 py-3 rounded-xl font-bold hover:bg-cat-orange hover:text-white transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2">
+                        <i data-lucide="mail"></i>
+                        Email Me
+                    </button>
+                    <button onclick="meow()" class="bg-cat-orange/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold hover:bg-cat-orange hover:border-transparent transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2">
+                        <i data-lucide="github"></i>
+                        GitHub
+                    </button>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-sm opacity-50 font-display">
+                © 2024 Dominique Makowski • Built with <i data-lucide="heart" class="inline w-3 h-3 text-red-400"></i> and Catnip
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Smooth trailing effect
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+            
+            cursorX += dx * 0.15;
+            cursorY += dy * 0.15;
+            
+            if (cursor) {
+                cursor.style.left = `${cursorX}px`;
+                cursor.style.top = `${cursorY}px`;
+                // Center the yarn ball
+                cursor.style.transform = `translate(-50%, -50%) rotate(${cursorX * 2}deg)`; 
+            }
+            
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        // Interactive Elements
+        function meow() {
+            const btn = event.currentTarget;
+            
+            // Visual feedback since we can't reliably play audio without user interaction first sometimes
+            // and I want to keep this self-contained without big audio files
+            const originalText = btn.innerHTML;
+            
+            // Create a floating 'Meow!'
+            const meowText = document.createElement('div');
+            meowText.innerText = 'Meow!';
+            meowText.style.position = 'fixed';
+            meowText.style.left = `${mouseX}px`;
+            meowText.style.top = `${mouseY}px`;
+            meowText.style.color = '#FF7043';
+            meowText.style.fontWeight = 'bold';
+            meowText.style.pointerEvents = 'none';
+            meowText.style.zIndex = '1000';
+            meowText.style.transition = 'all 1s ease-out';
+            document.body.appendChild(meowText);
+
+            // Animate it floating up and fading
+            requestAnimationFrame(() => {
+                meowText.style.transform = 'translateY(-50px)';
+                meowText.style.opacity = '0';
+            });
+
+            setTimeout(() => {
+                meowText.remove();
+            }, 1000);
+        }
+
+        // Add hover effect to all buttons/links to grow cursor
+        const interactables = document.querySelectorAll('a, button, .hate-item');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+                cursor.classList.add('mix-blend-multiply');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '30px';
+                cursor.style.height = '30px';
+                cursor.classList.remove('mix-blend-multiply');
+            });
+        });
+    </script>
 </body>
 </html>
